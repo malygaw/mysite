@@ -27,8 +27,8 @@ TEMPLATE_DEBUG = True
 ALLOWED_HOSTS = []
 
 TEMPLATE_DIRS = (
-    os.path.join(BASE_DIR,'/cms/articles/templates/'),
-    os.path.join(BASE_DIR,'/mysite/cms/templates/'),
+    os.path.join(BASE_DIR,'articles/templates/'),
+    os.path.join(BASE_DIR,'templates/'),
 )
 
 # Application definition
@@ -66,7 +66,7 @@ WSGI_APPLICATION = 'cms.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': '/mysite/cms/cms.db',
+        'NAME': os.path.join(BASE_DIR,'cms.db'),
     }
 }
 
@@ -83,7 +83,7 @@ USE_L10N = True
 
 USE_TZ = True
 
-MEDIA_ROOT = '/mysite/cms/media/'
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media/')
 
 MEDIA_URL = '/media/'
 
@@ -94,7 +94,7 @@ MEDIA_URL = '/media/'
 STATIC_URL = '/static/'
 
 STATICFILES_DIRS = (
-    ('static','mysite/cms/static/')
+    ('static',os.path.join(BASE_DIR,'static/'))
 
 )
 
