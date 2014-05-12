@@ -1,0 +1,30 @@
+{% extends "main.html" %}
+
+{% block article %}
+
+		<div id="content">
+			<div id="column1">
+				<h3>{{article.title}}</h3>
+				Data publikacji: {{article.published}}
+				<p><img src="{{ article.image.url }}" alt=""></p>
+				<p>{{article.content}}</p>
+				<hr>
+			</div>
+		</div>
+
+		<h3>Komentarze</h3>
+		{% for com in article.comment_set.all %}
+
+			<div id="column1">
+				
+				<h4><em>Dodano: {{ com.published }}</em></h4>
+				<p><span><em>{{ com.name }}</em></span></p>
+				{{ com.content }}
+				
+			</div>
+
+		{% endfor %}
+		<h3><p><a href="/article/{{ article.id }}/add_comment">Dodaj komentarz</a></p></h3>
+
+
+{% endblock %}

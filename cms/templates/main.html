@@ -1,0 +1,65 @@
+<!-- Sahara is a free template from TEMPLATED released under the Creative Commons Attribution License. You're free to use it for both commercial or personal use. We only ask that you credit us in some way. Enjoy :) -->
+{% load static %}
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html>
+<head>
+<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+<title>Django CMS</title>
+<meta name="keywords" content="" />
+<meta name="description" content="" />
+<link rel="stylesheet" type="text/css" href="{% static 'css/default.css' %}" />
+									    
+</head>
+<body>
+
+<div id="outer">
+	<div id="outer2">
+		<div id="header">
+			<a title="przykładowe zdjęcie" href={% url "articles"%}><img src="{% static 'images/pics07.jpg' %}"></a>
+		</div>
+	
+		<div id="menu">
+			<ul>
+				<li><a href={% url "articles"%}>Artykuły</a></li>
+				<li><a href={% url "temp" %}>Szablon</a></li>
+				<li><a href={% url "login" %}>Logowanie</a></li>
+				<li><a href={% url "create_user" %}>Rejestracja</a></li>
+			</ul>
+		</div>
+		
+		<div id="content">
+			<div id="column1">
+				
+				{% block article %}
+				{% endblock %}
+			</div>
+
+			<div id="column2">
+				<h3>Konto użytkownika</h3>
+				<ul>
+					<li><a href={% url "user_profile" %}>Ustawienia</a></li>
+					<li><a href={% url "logout"%}>Wyloguj</a></li>
+			</div>
+
+			{% if articles.count > 1 %}
+
+			<div id="column2">
+				<h3>Lista artykułów</h3>
+				{% for article in articles %}
+				<ul>
+					<li><a href="/article/{{ article.id }}">{{article.title}}</a></li>
+				{% endfor %}
+			{% endif %}
+			</div>
+
+		</div>
+		
+		<div id="footer">
+			<p>Copyright &copy; 2005 Untitled. Design by <a href="http://templated.co" rel="nofollow">TEMPLATED</a>.</p>
+		</div>
+		
+	</div>
+</div>
+
+</body>
+</html>

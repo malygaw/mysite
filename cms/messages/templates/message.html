@@ -1,0 +1,9 @@
+{% extends "main.html" %}
+
+{% block article %}
+
+<h3>{{ message.title }}</h3>
+<p>{{ message.content }}</p>
+<p><a href="/messages/delete/{{ message.id }}">Usuń powiadomienie</a></p>
+
+{% endblock %}

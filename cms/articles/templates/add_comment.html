@@ -1,0 +1,10 @@
+{% extends "main.html" %}
+
+{% block article %}
+
+<form action="/article/{{ article.id }}/add_comment/" method="post">{% csrf_token %}
+	{{ form.as_p }}
+	<input type="submit" name="submit" value="Dodaj komentarz"/>
+</form>
+
+{% endblock %}

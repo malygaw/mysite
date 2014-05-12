@@ -1,0 +1,29 @@
+{% extends "main.html" %}
+
+{% block article %}
+
+{% if articles.count > 0 %}
+{% for article in articles %} 
+
+		<div id="content">
+	
+			<div id="column1">
+
+				<h2><a href="/article/{{ article.id }}">{{article.title}}</a></h2>
+				Data publikacji: {{article.published}}
+				<p><img src="{{ article.image.url }}" alt=""></p>
+				<p>{{article.content | truncatewords:150}}</p>
+				<h3><p><a href="/article/{{ article.id }}">Więcej</a><p></h3>
+				
+			</div>
+		
+		</div>
+
+		
+
+{% endfor %}
+{% else %}
+<p>brak artykułów</p>
+{% endif %} 
+{% endblock %}
+

@@ -1,0 +1,10 @@
+{% extends "main.html" %}
+
+{% block article %}
+
+<form action="/accounts/profile/" method="post" id="column3">{% csrf_token %}
+	{{ form.as_p }}
+	<input type="submit" value="Aktualizacja profilu">
+</form>
+
+{% endblock %}

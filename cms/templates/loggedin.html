@@ -1,0 +1,18 @@
+{% extends "main.html" %}
+
+{% block article %}
+
+<h3>Witaj: {{ user_name }}</h3>
+{% if messages.count > 0 %}
+
+<h3>Wiadomości</h3>
+{% for m in messages %}
+
+<p><a href="/messages/show/{{ m.id }}">{{ m.title }}</a></p>
+
+{% endfor %}
+
+{% endif %}
+<p><a href="/accounts/logout">Wylogowanie</a></p>
+
+{% endblock %}
