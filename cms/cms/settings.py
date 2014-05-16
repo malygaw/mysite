@@ -27,8 +27,10 @@ TEMPLATE_DEBUG = True
 ALLOWED_HOSTS = []
 
 TEMPLATE_DIRS = (
-    os.path.join(BASE_DIR,'templates/articles/'),
     os.path.join(BASE_DIR,'templates/'),
+    os.path.join(BASE_DIR,'templates/articles/'),
+    os.path.join(BASE_DIR,'templates/messages/'),
+    os.path.join(BASE_DIR,'templates/userprofile/'),
 )
 
 # Application definition
