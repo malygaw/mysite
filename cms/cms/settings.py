@@ -27,7 +27,7 @@ TEMPLATE_DEBUG = True
 ALLOWED_HOSTS = []
 
 TEMPLATE_DIRS = (
-    os.path.join(BASE_DIR,'articles/templates/'),
+    os.path.join(BASE_DIR,'templates/articles/'),
     os.path.join(BASE_DIR,'templates/'),
 )
 
